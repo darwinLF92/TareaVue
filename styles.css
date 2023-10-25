@@ -1,0 +1,122 @@
+.container {
+    font-family: 'Arial', sans-serif;
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+.search-box {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    width: 100%;          /* Ocupa todo el ancho disponible */
+    max-width: 600px;     /* Ancho máximo */
+    min-width: 200px;     /* Ancho mínimo */
+    padding: 10px 15px;   /* Relleno para dar espacio al contenido */
+}
+
+.search-box input[type="text"] {
+    width: 100%;          /* Hace que el input ocupe todo el ancho del contenedor */
+    padding: 8px 12px;    /* Relleno para el input */
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f5f8fa;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.search-box input[type="text"]:focus {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    outline: none;       /* Elimina el contorno por defecto al enfocarse */
+}
+
+.new-post {
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.new-post input, .new-post textarea {
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    width: 90%;
+    transition: border 0.2s;
+}
+
+.new-post input:focus, .new-post textarea:focus {
+    border: 1px solid #007bff;
+    outline: none;
+}
+
+.new-post textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.new-post button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.new-post button:hover {
+    background-color: #0056b3;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px; /* Esto añade un espacio entre los botones */
+}
+
+.new-post button:not(:last-child) {
+    margin-right: 10px;  /* Espacio a la derecha de cada botón excepto el último */
+}
+
+
+.post-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.post-list th, .post-list td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.post-list tr:hover {
+    background-color: #f5f5f5;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #0056b3;
+}
+
+body {
+    background-color: #11bfc571; /* Esto es un gris claro. Puedes cambiar el valor por el color que desees. */
+}

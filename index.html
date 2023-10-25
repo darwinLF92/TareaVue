@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue App with JSONPlaceholder API</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <!-- Buscador -->
+            <div class="search-box">
+                <input type="text" v-model="searchQuery" placeholder="Buscar por Título o Usuario">
+                <p>{{ matchingPostCount }} posts encontrados</p>
+            </div>
+            
+            <!-- Crear Nuevo Post -->
+            <div class="new-post">
+                <h2>{{ selectedPost ? 'Editar Post' : 'Crear Nuevo Post' }}</h2>
+                <input type="text" v-model="newPost.title" placeholder="Título">
+                <textarea v-model="newPost.body" placeholder="Cuerpo"></textarea>
+            <div class="buttons-container">
+                <button @click="createPost">{{ selectedPost ? 'Guardar Cambios' : 'Crear' }}</button>
+                <button @click="clearForm">{{ selectedPost ? 'Cancelar Edición' : 'Limpiar Campos' }}</button>
+            </div>
+            </div>
+            
+            <!-- Listado de Posts -->
+            <div class="post-list">
+                <h2>Listado de Posts</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>User</th>
+                            <th>Titulo</th>
+                            <th>Cuerpo</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="post in filteredPosts" :key="post.id">
+                            <td>{{ post.id }}</td>
+                            <td>{{ post.userId }}</td>
+                            <td>{{ post.title }}</td>
+                            <td>{{ post.body }}</td>
+                            <td><button @click="editPost(post)">Editar</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-resource@1.5.1/dist/vue-resource.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
